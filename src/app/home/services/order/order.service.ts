@@ -6,6 +6,7 @@ import { Order, OrderItem } from '../../types/order.type';
 import { DeliveryAddress } from '../../types/cart.type';
 import { UserService } from '../users/user.service';
 import { PastOrder, PastOrderProduct } from '../../types/order.type';
+import { environment } from '../../../../environments/environment.prod';
 
 @Injectable()
 export class OrderService {
@@ -17,7 +18,7 @@ export class OrderService {
 
   // private baseUrl = 'http://localhost:8085/orders';
 
-  private baseUrl = 'https://estoreapp-aebd8dcaf3bf.herokuapp.com/orders';
+  private baseUrl = environment.url + '/orders';
 
   saveOrder(
     deliveryAddress: DeliveryAddress,

@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { Category } from '../../types/category.type';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
+import { environment } from '../../../../environments/environment.prod';
 
 @Injectable()
 export class CategoryService {
   // private baseUrl = 'http://localhost:8085/estore';
 
-  private baseUrl = 'https://estoreapp-aebd8dcaf3bf.herokuapp.com/estore';
+  private baseUrl = environment.url + '/estore';
 
   constructor(private httpClient: HttpClient) {}
 

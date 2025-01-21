@@ -4,6 +4,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { loggedInUser, user } from '../../types/user.type';
 import { loginToken, JwtPayload } from '../../types/jwt.types';
 import { jwtDecode } from 'jwt-decode';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -27,7 +28,7 @@ export class UserService {
 
   // baseUrl: string = 'http://localhost:8085/users';
 
-  baseUrl: string = 'https://estoreapp-aebd8dcaf3bf.herokuapp.com/users';
+  baseUrl: string = environment.url + '/users';
 
   get isUserAuthenticated(): boolean {
     return this.isAuthenticated.value;
