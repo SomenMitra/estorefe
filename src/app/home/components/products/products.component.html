@@ -1,0 +1,29 @@
+<div class="main-product-container">
+    <div *ngFor="let p of productStore.products$ | async" class="mx-5 p-3 product-card">
+        <div class="product-image-container">
+            <a [routerLink]="['/home/products/details', p.id]">
+                <img [src]="'../../../../assets/img/products/'+p.product_img" [alt]="p.product_name+' image'">
+            </a>
+        </div>
+        <div class="product-info">
+            <a [routerLink]="['/home/products/details', p.id]">
+                <h5>{{p.product_name}}</h5>
+            </a>
+            <p class="product-price">{{ p. price | currency }}</p>
+            <p><app-ratings [score]="p.ratings"></app-ratings></p>
+            <div class="my-3" (click)="addToCart(p)">
+                <div class="cart-button">
+                    <div class="cart-icon-container">
+                        <fa-icon [icon]="faShoppingCart"></fa-icon>
+                    </div>
+                    <div class="cart-text-container mx-3">
+                        <p>Add to Cart</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!productStore.products.length">
+        No products found
+    </div>
+</div>
