@@ -1,0 +1,45 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    /* Ensure layout is column-based */
+    height: 100vh;
+    /* Full viewport height */
+    overflow: hidden;
+    /* Prevents content overflow */
+}
+
+.side-navigation-container {
+    position: sticky;
+    top: 0;
+    height: 100%;
+    /* Full height for sticky effect */
+    overflow-y: auto;
+    /* Allows the sidenav to scroll if content overflows */
+}
+
+.products-container {
+    display: flex;
+    flex-direction: column;
+    /* Ensure content inside is stacked vertically */
+    flex-grow: 1;
+    /* Allows the container to grow and take available space */
+    height: calc(100vh - 2em);
+    /* Deduct space for the sidenav and header */
+    overflow-y: auto;
+    /* Enables vertical scrolling for products */
+    padding: 1em;
+}
+
+app-footer {
+    margin-top: auto;
+    /* Pushes the footer to the bottom */
+    background-color: #1f1e1e;
+    /* Footer background */
+    color: white;
+    /* Footer text color */
+    text-align: center;
+    /* Center the text */
+    padding: 1rem;
+    /* Footer padding */
+    position: relative;
+}

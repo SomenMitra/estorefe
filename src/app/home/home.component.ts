@@ -14,6 +14,7 @@ import { filter } from 'rxjs';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './services/users/user.service';
 import { OrderService } from './services/order/order.service';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-home',
@@ -23,6 +24,7 @@ import { OrderService } from './services/order/order.service';
     CatnavigationComponent,
     RouterModule,
     ReactiveFormsModule,
+    FooterComponent,
   ],
   providers: [
     CategoryService,

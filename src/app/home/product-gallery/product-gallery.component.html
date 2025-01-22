@@ -1,10 +1,11 @@
-<div class="container-fluid">
+<div class="main-container">
     <div class="row">
-        <div class="col-lg-2 lol-md-3 col-sm-4">
+        <div class="col-lg-2 col-md-3 col-sm-4 side-navigation-container">
             <app-sidenav (subCategoryClicked)="onSelectSubCategory($event)"></app-sidenav>
         </div>
-        <div class="col-lg-10 col-md-9 col-sm-8">
-            <app-products></app-products>
+        <div class="col-lg-10 col-md-9 col-sm-8 products-container">
+            <app-products></app-products> <!-- Products here -->
+            <app-footer></app-footer> <!-- Footer placed here -->
         </div>
     </div>
 </div>

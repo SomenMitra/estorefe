@@ -11,6 +11,16 @@
         flex-direction: column;
         box-shadow: 3px 1px 14px 0px lightgray;
         border-radius: 0.6em;
+        width: 200px;
+        /* Set a fixed width to make cards smaller */
+        height: auto;
+        /* Height adjusts based on content */
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+            /* Slight scale effect on hover */
+        }
 
         .product-image-container {
             a {
@@ -18,56 +28,75 @@
             }
 
             img {
-                display: flex;
-                justify-content: center;
+                width: 100%;
+                /* Make image responsive */
+                height: 150px;
+                /* Fixed height for image */
+                object-fit: cover;
+                /* Maintain aspect ratio */
                 border-radius: 0.3em;
             }
         }
 
         .product-info {
-            padding: 1em;
+            padding: 0.8em;
             text-align: center;
 
             h5 {
                 font-weight: 600;
+                font-size: 1.1em;
+                /* Smaller font size for product name */
+                margin-bottom: 0.5em;
             }
 
             .product-price {
-                margin: 0;
+                margin: 0.3em 0;
                 font-weight: 400;
-                font-size: 1.2em;
+                font-size: 1em;
+                /* Smaller font size for price */
             }
         }
 
         .cart-button {
             display: flex;
-            justify-content: space-evenly;
-            margin-top: 1em;
-            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0.8em;
+            /* Reduced spacing above the button */
+            width: 80%;
+            /* Make the button smaller in width */
             height: 2em;
+            /* Reduced height for a smaller button */
             border: 1px solid black;
-            border-radius: 1em;
+            border-radius: 0.6em;
+            /* Slightly reduced border radius */
+            background-color: #f5f5f5;
+            /* Subtle background color */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
             .cart-icon-container {
                 padding: 0.2em;
-                width: 2em;
+                width: 1.8em;
 
+                /* Reduced icon container size */
                 i {
-                    font-size: 1.2em;
+                    font-size: 1em;
+                    /* Reduced icon size */
                 }
             }
 
             .cart-text-container {
-                padding: 0.1em;
-
                 p {
-                    font-weight: 600;
-                    font-size: 1em;
+                    font-size: 0.85em;
+                    margin: 0;
+                    font-weight: 400;
                 }
             }
 
             &:hover {
                 cursor: pointer;
+                background-color: #e0e0e0;
+                /* Change background on hover */
                 box-shadow: inset #dcdcdc 1px 2px 5px;
             }
         }
