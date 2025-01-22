@@ -10,6 +10,7 @@ import { matchPasswords } from './validators/match-passwords.validator';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../../services/users/user.service';
 import { user } from '../../../types/user.type';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user-signup',
@@ -74,17 +75,35 @@ export class UserSignupComponent {
     this.userService.createUser(user).subscribe({
       next: (result) => {
         if (result.code === 'success') {
-          this.alertMessage = result.message as string;
-          this.alertType = 0;
+          // this.alertMessage = result.message as string;
+          // this.alertType = 0;
+          Swal.fire({
+            title: 'Success!',
+            text: result.message,
+            icon: 'success',
+            confirmButtonText: 'OK',
+          });
         }
         if (result.code === 'found') {
-          this.alertMessage = result.message as string;
-          this.alertType = 1;
+          // this.alertMessage = result.message as string;
+          // this.alertType = 1;
+          Swal.fire({
+            title: 'Warning!',
+            text: result.message,
+            icon: 'warning',
+            confirmButtonText: 'Try Again',
+          });
         }
       },
       error: (error) => {
-        this.alertMessage = error.message;
-        this.alertType = 2;
+        // this.alertMessage = error.message;
+        // this.alertType = 2;
+        Swal.fire({
+          title: 'Error!',
+          text: error.message,
+          icon: 'error',
+          confirmButtonText: 'Close',
+        });
       },
     });
   }

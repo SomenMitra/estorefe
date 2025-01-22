@@ -1,11 +1,65 @@
-.form-group-margin {
-    margin-bottom: 1rem;
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+}
+
+.card {
+    width: 100%;
+    max-width: 400px;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: white;
+
+    .card-header {
+        background-color: #042344;
+        color: white;
+        padding: 1.5rem;
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .card-body {
+        padding: 2rem;
+    }
+
+    .form-group-margin {
+        margin-bottom: 1.5rem;
+    }
+
+    input.form-control {
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+
+    button.btn {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 0.25rem;
+    }
+
+    .card-footer {
+        padding: 1rem;
+        background-color: #f1f1f1;
+        border-radius: 0 0 0.5rem 0.5rem;
+
+        .alert {
+            margin: 0;
+            padding: 0.75rem;
+        }
+    }
 }
 
 a {
     text-decoration: none;
-}
+    color: #15b101;
 
-.form-container{
-    width: 40em;
+    &:hover {
+        color: #021b36;
+        text-decoration: underline;
+    }
 }

@@ -1,36 +1,41 @@
-<div class="container form-container">
-    <form [formGroup]="userLoginForm" (ngSubmit)="onSubmit()">
-        <div class="form-group form-group-margin">
-            <label for="email">Email*</label>
-            <input type="text" class="form-control" id="email" formControlName="email" />
-            <span class="text-danger" *ngIf="email?.touched && email?.errors?.['required']">
-                Email is required
-            </span>
-
-            <span class="text-danger" *ngIf="email?.touched && email?.errors?.['email']">
-                Enter valid email address
-            </span>
+<div class="container form-container d-flex justify-content-center align-items-center">
+    <div class="card shadow-lg">
+        <div class="card-header text-center">
+            <h3>User Login</h3>
         </div>
-        <div class="form-group form-group-margin">
-            <label for="password">Password*</label>
-            <input type="password" class="form-control" id="password" formControlName="password" />
-            <span class="text-danger" *ngIf="password?.touched && password?.errors?.['required']">
-                Password is required
-            </span>
+        <div class="card-body">
+            <form [formGroup]="userLoginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group form-group-margin">
+                    <label for="email">Email*</label>
+                    <input type="text" class="form-control" id="email" formControlName="email" />
+                    <span class="text-danger" *ngIf="email?.touched && email?.errors?.['required']">
+                        Email is required
+                    </span>
+                    <span class="text-danger" *ngIf="email?.touched && email?.errors?.['email']">
+                        Enter valid email address
+                    </span>
+                </div>
+                <div class="form-group form-group-margin">
+                    <label for="password">Password*</label>
+                    <input type="password" class="form-control" id="password" formControlName="password" />
+                    <span class="text-danger" *ngIf="password?.touched && password?.errors?.['required']">
+                        Password is required
+                    </span>
+                </div>
+                <div class="text-center form-group-margin">
+                    <button type="submit" class="btn btn-warning btn-block" [disabled]="!userLoginForm.valid">
+                        Sign In
+                    </button>
+                </div>
+                <div class="text-center form-group-margin">
+                    Not a member? <a [routerLink]="['/home/signup']">Register</a>
+                </div>
+            </form>
         </div>
-
-        <div class="text-center form-group-margin">
-            <button type="submit" class="btn btn-warning" [disabled]="!userLoginForm.valid">
-                Sign In
-            </button>
+        <div class="card-footer text-center" *ngIf="alertMessage !== ''">
+            <div class="alert" [ngClass]="alertType === 0 ? 'alert-success' : 'alert-danger'">
+                {{ alertMessage }}
+            </div>
         </div>
-
-        <div class="text-center form-group-margin">
-            Not a member? <a [routerLink]="['/home/signup']">Register</a>
-        </div>
-
-        <div class="alert" [ngClass]="alertType === 0 ? 'alert-success' : 'alert-danger'" *ngIf="alertMessage !== ''">
-            {{ alertMessage }}
-        </div>
-    </form>
+    </div>
 </div>
